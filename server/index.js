@@ -1,10 +1,44 @@
 require('dotenv').config();
+
 const express = require('express'),
       userCtrl = require('./controllers/user'),
       postCtrl = require('./controllers/posts')
 
 
+
+
+
+
+
+
+
+
+
+      massive({
+        connectionString: CONNECTION_STRING,
+        ssl: { rejectUnauthorized: false }
+      }).then(db => {
+        app.set('db', db);
+        console.log('db connected');
+      });
+    
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
 const app = express();
+
 
 app.use(express.json());
 
